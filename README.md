@@ -1,2 +1,2 @@
 # Tickets
-Takes opened tickets under specific groups on redmine.
+Takes opened tickets under specific project on redmine.
