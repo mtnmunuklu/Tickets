@@ -1,7 +1,7 @@
 import logging
 import os
 from src.config import Config
-
+from datetime import datetime
 
 class Logger:
 
@@ -16,7 +16,8 @@ class Logger:
         """
         self.log_type = log_type
         self.log_dir = Config.LOG_DIR
-        self.log_path = self.log_dir + Config.LOG_FILE
+        date = datetime.today().strftime('%Y-%m-%d')
+        self.log_path = self.log_dir + Config.LOG_FILE_PREFIX + "-" +  date + Config.LOG_FILE_SUFFIX
         self.log_format = Config.LOG_FORMAT
         self.close_log()
         self.logger = self.get_log_config()
